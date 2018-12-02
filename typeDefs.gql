@@ -1,0 +1,37 @@
+type Transporter {
+    id: ID!
+    name: String!
+    img: String!
+}
+
+type Consignment {
+    id: ID!
+    country: String!
+    transporter: Transporter!
+    deliveryAddress: String!
+    recipient: String!
+    cashOnDelivery: Boolean
+    note: String
+    createdAt: String
+}
+
+type Query {
+    getConsignments: [Consignment]
+    getTransporters: [Transporter]
+}
+
+type Mutation {
+    createTransporter(
+        name: String!
+        img: String!
+    ): Transporter!
+
+    createConsignment(
+        country: String!,
+        transporterId: ID!,
+        deliveryAddress: String!,
+        recipient: String!,
+        cashOnDelivery:Boolean,
+        note: String
+    ): Consignment!
+}

@@ -1,0 +1,23 @@
+{
+  "name": "vue-project",
+  "version": "1.0.0",
+  "description": "Client(frontend): Vue js | Server(backend): Gql, Appolo, Mongo",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "cd client && npm run serve",
+    "dev": "concurrently --names \"server,client\" \"npm run server --silent\" \"npm run client --silent\""
+  },
+  "author": "Martin Sasak",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  },
+  "dependencies": {
+    "apollo-server": "^2.2.5",
+    "concurrently": "^4.1.0",
+    "dotenv": "^6.1.0",
+    "graphql": "^14.0.2",
+    "mongoose": "^5.3.14"
+  }
+}
